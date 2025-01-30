@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\My Projects\\To Do List\\To Do List\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6C0D842E-BE1C-492D-81EE-7D644F08965B}|To Do List\\To Do List.csproj|d:\\my projects\\to do list\\to do list\\to do list\\reqired.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C0D842E-BE1C-492D-81EE-7D644F08965B}|To Do List\\To Do List.csproj|solutionrelative:to do list\\reqired.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C0D842E-BE1C-492D-81EE-7D644F08965B}|To Do List\\To Do List.csproj|d:\\my projects\\to do list\\to do list\\to do list\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C0D842E-BE1C-492D-81EE-7D644F08965B}|To Do List\\To Do List.csproj|solutionrelative:to do list\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Reqired.cs",
+              "DocumentMoniker": "D:\\My Projects\\To Do List\\To Do List\\To Do List\\Reqired.cs",
+              "RelativeDocumentMoniker": "To Do List\\Reqired.cs",
+              "ToolTip": "D:\\My Projects\\To Do List\\To Do List\\To Do List\\Reqired.cs",
+              "RelativeToolTip": "To Do List\\Reqired.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAkwGsAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T01:18:30.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\My Projects\\To Do List\\To Do List\\To Do List\\Program.cs",
+              "RelativeDocumentMoniker": "To Do List\\Program.cs",
+              "ToolTip": "D:\\My Projects\\To Do List\\To Do List\\To Do List\\Program.cs",
+              "RelativeToolTip": "To Do List\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T01:17:57.011Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
