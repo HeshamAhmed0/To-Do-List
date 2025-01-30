@@ -9,8 +9,7 @@ namespace To_Do_List
     internal class Reqired
     {
         #region Attributes
-        private static int Size=1;
-        private string[] item;
+        private static List<string> Item=new List<string>();
         private int i = 0;
 
         #endregion
@@ -59,9 +58,9 @@ namespace To_Do_List
             else
             {
                 Console.WriteLine("Your Day List : ");
-                foreach (string Item in item)
+                foreach (string I in Item)
                 {
-                    Console.WriteLine(Item);
+                    Console.WriteLine(I);
                 }
 
 
@@ -69,9 +68,8 @@ namespace To_Do_List
         }
         public void Additems() {
             Console.WriteLine("Enter To Do In This Day : ");
-             item = new string[Size];
-            item[i] = Console.ReadLine();
-            i++;
+            Item.Add(Console.ReadLine());
+           
            
             newOption();
 
@@ -82,14 +80,13 @@ namespace To_Do_List
         {
             Console.Write("Enter Item You Are Dn : ");
             string Success=Console.ReadLine();
-            int index = Array.IndexOf(item, Success);
-            foreach (string Item in item)
+            foreach (string I in Item)
             {
-                if (Item ==Success)
+                if (I ==Success)
                 {
-                    Console.WriteLine($"{Item } Dn ");
+                    Console.WriteLine($"{I } Dn ");
                 }
-                Console.WriteLine(Item);
+                Console.WriteLine(I);
             }
 
             newOption();
@@ -99,24 +96,8 @@ namespace To_Do_List
         {
             Console.Write("Enter Item You Want To Delete It : ");
             string DeleteItem = Console.ReadLine();
-            string[] newItems =new string[item.Length];
-            foreach (string CurrentItem in item)
-            {
-                if (CurrentItem==DeleteItem) 
-                {
-                    break;
-                }
-                else
-                {
-                    for (int i=0; i<newItems.Length;i++)
-                    {
-                        newItems[i] = CurrentItem;
-
-                    }
-                    Array.Clear(item);
-                    Array.Copy(newItems,item,newItems.Length);
-                }
-            }
+            Item.Remove(DeleteItem);
+               
             newOption();
         }
     }
