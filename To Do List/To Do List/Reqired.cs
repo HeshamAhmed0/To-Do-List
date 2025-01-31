@@ -11,6 +11,7 @@ namespace To_Do_List
         #region Attributes
         private static List<string> Item=new List<string>();
         private int i = 0;
+        string Success;
 
         #endregion
 
@@ -18,7 +19,7 @@ namespace To_Do_List
         public Reqired()
         {
             Console.WriteLine("          Hello In My App To Do Your Daily Recuremen");
-            Console.WriteLine("What Do You Want To Do : \n1 Add Item\n2 Delete Item\n3 Dn Item");
+            Console.WriteLine("What Do You Want To Do : \n1 Add Item\n2 Delete Item\n3 Dn Item\n4 View Item");
             byte response =byte.Parse(Console.ReadLine());
             if (response == 1)
             {
@@ -28,7 +29,7 @@ namespace To_Do_List
             {
                 DeleteItem();
             }
-            else if (response == 3) { DnItem(); }
+            else if (response == 3) { DnItem(); } else if (response == 4) { ViewItems(); }
         }
         #endregion
         public void newOption()
@@ -36,11 +37,14 @@ namespace To_Do_List
             Console.WriteLine("Do You Want Another Option : ");
             Console.Write("Choose Y or N : ");
             string Choosen = Console.ReadLine();
+            Console.Clear();
+
             if (Choosen == "Y")
             {
-                Console.Clear();
-                Console.WriteLine("What Do You Want To Do : \n1 Add Item\n2 Delete Item\n3 Dn Item");
+                Console.WriteLine("What Do You Want To Do : \n1 Add Item\n2 Delete Item\n3 Dn Item\n4 View Items");
                 byte response = byte.Parse(Console.ReadLine());
+                Console.Clear();
+
                 if (response == 1)
                 {
                     Additems();
@@ -50,6 +54,7 @@ namespace To_Do_List
                     DeleteItem();
                 }
                 else if (response == 3) { DnItem(); }
+                else if (response == 4) { ViewItems(); };
 
 
 
@@ -57,20 +62,27 @@ namespace To_Do_List
             }
             else
             {
-                Console.WriteLine("Your Day List : ");
-                foreach (string I in Item)
-                {
-                    Console.WriteLine(I);
-                }
-
+                Console.WriteLine("You Are Hero \n Continue . ");
 
             }
         }
+
+        public void ViewItems()
+        {
+            for (int i=0;i<Item.Count;i++)
+            {
+                Console.WriteLine(Item[i]);
+            }
+            newOption();
+        }
+
         public void Additems() {
+            Console.Clear();
             Console.WriteLine("Enter To Do In This Day : ");
             Item.Add(Console.ReadLine());
-           
-           
+            Console.Clear();
+
+
             newOption();
 
         }
@@ -78,17 +90,28 @@ namespace To_Do_List
         // this BlockOf Code Return Dn After Succes Item 
         public void DnItem()
         {
-            Console.Write("Enter Item You Are Dn : ");
-            string Success=Console.ReadLine();
-            foreach (string I in Item)
-            {
-                if (I ==Success)
-                {
-                    Console.WriteLine($"{I } Dn ");
-                }
-                Console.WriteLine(I);
-            }
+            Console.Clear();
 
+            Console.Write("Enter Item You Are Dn : ");
+             Success=Console.ReadLine();
+            Console.Clear();
+
+            for (int i = 0; i < Item.Count ; i++)
+            {
+                if (Item[i] == Success)
+                {
+
+                    Item[i] = Success + " Dn";
+                    Console.WriteLine(Item[i]);
+
+                }
+                else {             
+                    Console.WriteLine(Item[i]);
+                      }
+               
+
+                
+            }
             newOption();
         }
 
