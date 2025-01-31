@@ -18,53 +18,52 @@ namespace To_Do_List
         #region Constructor
         public Reqired()
         {
+            Start();
+        }
+        public void Start()
+        {
             Console.WriteLine("          Hello In My App To Do Your Daily Recuremen");
             Console.WriteLine("What Do You Want To Do : \n1 Add Item\n2 Delete Item\n3 Dn Item\n4 View Item");
-            byte response =byte.Parse(Console.ReadLine());
-            if (response == 1)
-            {
-                Additems();
-            }
-            else if (response == 2)
-            {
-                DeleteItem();
-            }
-            else if (response == 3) { DnItem(); } else if (response == 4) { ViewItems(); }
+            string response = Console.ReadLine();
+            if (response == "1") { Additems(); }
+            else if (response == "2") { DeleteItem(); }
+            else if (response == "3") { DnItem(); }
+            else if (response == "4") { ViewItems(); }
+            else {Console.Clear(); Console.WriteLine("In Valid Choosen Please Enter Valid Choosen");Start(); }
         }
         #endregion
         public void newOption()
         {
             Console.WriteLine("Do You Want Another Option : ");
             Console.Write("Choose Y or N : ");
-            string Choosen = Console.ReadLine();
+            Char Choosen = Char.Parse(Console.ReadLine());
             Console.Clear();
 
-            if (Choosen == "Y")
+            if (Choosen == 'Y' || Choosen == 'y')
             {
                 Console.WriteLine("What Do You Want To Do : \n1 Add Item\n2 Delete Item\n3 Dn Item\n4 View Items");
                 byte response = byte.Parse(Console.ReadLine());
                 Console.Clear();
 
-                if (response == 1)
-                {
-                    Additems();
-                }
-                else if (response == 2)
-                {
-                    DeleteItem();
-                }
+                if (response == 1) { Additems(); }
+                else if (response == 2) { DeleteItem(); }
                 else if (response == 3) { DnItem(); }
-                else if (response == 4) { ViewItems(); };
-
-
-
-
+                else if (response == 4) { ViewItems(); }
+                else
+                {
+                    Console.WriteLine("This Input In Valid Please Enter Valid Choosen");
+                    newOption();
+                }
             }
-            else
+            else if (Choosen == 'n' || Choosen == 'N')
             {
+                for (int i = 0; i < Item.Count; i++)
+                {
+                    Console.WriteLine(Item[i]);
+                }
                 Console.WriteLine("You Are Hero \n Continue . ");
-
             }
+            else { Console.WriteLine("In Valid Choosen"); newOption(); }
         }
 
         public void ViewItems()
@@ -77,14 +76,10 @@ namespace To_Do_List
         }
 
         public void Additems() {
-            Console.Clear();
             Console.WriteLine("Enter To Do In This Day : ");
             Item.Add(Console.ReadLine());
             Console.Clear();
-
-
             newOption();
-
         }
         
         // this BlockOf Code Return Dn After Succes Item 
